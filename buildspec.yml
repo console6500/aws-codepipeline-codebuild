@@ -3,13 +3,10 @@ version: 0.2
 
 env:
   variables:
-    AWS_ACCESS_KEY_ID: "<your_AWS_access_key>"
-    AWS_SECRET_ACCESS_KEY: "<your_AWS_secret_key>"
-    AWS_DEFAULT_REGION: "<your_AWS_region>"
-    STAGING_FUNCTION_NAME: "<your_staging_function_name>"
-    STAGING_URL: "<your_staging_url>"
-    PRODUCTION_FUNCTION_NAME: "<your_production_function_name>"
-    PRODUCTION_URL: "<your_production_url>"
+    STAGING_FUNCTION_NAME: "samp-app-2023-09-17-1453-staging"
+    STAGING_URL: "https://bnqxdygf7nnx7mbdtmgmq2xl3y0kefch.lambda-url.us-east-2.on.aws/"
+    PRODUCTION_FUNCTION_NAME: "samp-app-2023-09-17-1453-production"
+    PRODUCTION_URL: "https://ax6kykhpw3csjn3ulefkultfvy0ztcts.lambda-url.us-east-2.on.aws/"
 
 phases:
   install:
