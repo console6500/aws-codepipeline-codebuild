@@ -3,10 +3,8 @@ version: 0.2
 
 env:
   variables:
-    STAGING_FUNCTION_NAME: "samp-app-2023-09-17-1453-staging"
-    STAGING_URL: "https://bnqxdygf7nnx7mbdtmgmq2xl3y0kefch.lambda-url.us-east-2.on.aws/"
-    PRODUCTION_FUNCTION_NAME: "samp-app-2023-09-17-1453-production"
-    PRODUCTION_URL: "https://ax6kykhpw3csjn3ulefkultfvy0ztcts.lambda-url.us-east-2.on.aws/"
+    FUNCTION_NAME: 
+    URL:
 
 phases:
   install:
@@ -27,10 +25,8 @@ phases:
 
   post_build:
     commands:
-      - make deploy PLATFORM="AWS CodeBuild" FUNCTION=$STAGING_FUNCTION_NAME VERSION=$CODEBUILD_RESOLVED_SOURCE_VERSION BUILD_NUMBER=$CODEBUILD_BUILD_NUMBER
-      - make testdeployment URL=$STAGING_URL VERSION=$CODEBUILD_RESOLVED_SOURCE_VERSION
-      - make deploy PLATFORM="AWS CodeBuild" FUNCTION=$PRODUCTION_FUNCTION_NAME VERSION=$CODEBUILD_RESOLVED_SOURCE_VERSION BUILD_NUMBER=$CODEBUILD_BUILD_NUMBER
-      - make testdeployment URL=$PRODUCTION_URL VERSION=$CODEBUILD_RESOLVED_SOURCE_VERSION
+      - make deploy PLATFORM="AWS CodeBuild" FUNCTION=$FUNCTION_NAME VERSION=$CODEBUILD_RESOLVED_SOURCE_VERSION BUILD_NUMBER=$CODEBUILD_BUILD_NUMBER
+      - make testdeployment URL=$URL VERSION=$CODEBUILD_RESOLVED_SOURCE_VERSION
 
 artifacts:
   files:
